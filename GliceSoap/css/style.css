@@ -1,0 +1,208 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilos del banner */
+.banner {
+    background-image: url('/img/banner.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+}
+
+.banner h2 {
+    font-size: 36px;
+}
+
+.banner p {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Estilos para los productos destacados, testimonios y redes sociales (puedes personalizar según tus necesidades) */
+
+/* Estilos para la sección de suscripción */
+.suscripcion {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.suscripcion h2 {
+    font-size: 24px;
+}
+
+.suscripcion p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-logo p {
+    font-size: 18px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.footer-contact h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.footer-contact p {
+    font-size: 16px;
+}
+
+.footer-links h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* Estilos de la sección de categorías */
+.categorias {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.categorias h2 {
+    font-size: 24px;
+}
+
+.categorias ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categorias ul li {
+    margin: 10px 0;
+}
+
+.categorias ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+/* Estilos de la sección de productos */
+.productos {
+    padding: 20px;
+}
+
+.productos h2 {
+    font-size: 24px;
+}
+
+.filtro {
+    margin-top: 20px;
+}
+
+.busqueda {
+    margin-top: 10px;
+}
+
+.lista-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ejemplo de una cuadrícula de 3 columnas */
+    grid-gap: 20px; /* Espacio entre los productos */
+}
