@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const helpIconTipoPiel = document.getElementById('helpTipoPiel');
-    const helpPopupTipoPiel = document.getElementById('helpPopupTipoPiel');
-    const helpIconProblemasDermatologicos = document.getElementById('helpProblemasDermatologicos');
-    const helpPopupProblemasDermatologicos = document.getElementById('helpPopupProblemasDermatologicos');
-
     // Función para mostrar la ventana emergente de ayuda
     function showHelpPopup(icon, popup) {
         icon.addEventListener('click', () => {
@@ -21,13 +16,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Mostrar y ocultar la ventana emergente de ayuda para el tipo de piel
+    const helpIconTipoPiel = document.getElementById('helpTipoPiel');
+    const helpPopupTipoPiel = document.getElementById('helpPopupTipoPiel');
+
     showHelpPopup(helpIconTipoPiel, helpPopupTipoPiel);
     hideHelpPopup(helpIconTipoPiel, helpPopupTipoPiel);
 
     // Mostrar y ocultar la ventana emergente de ayuda para problemas dermatológicos
+    const helpIconProblemasDermatologicos = document.getElementById('helpProblemasDermatologicos');
+    const helpPopupProblemasDermatologicos = document.getElementById('helpPopupProblemasDermatologicos');
+
     showHelpPopup(helpIconProblemasDermatologicos, helpPopupProblemasDermatologicos);
     hideHelpPopup(helpIconProblemasDermatologicos, helpPopupProblemasDermatologicos);
-    
+
+    // Descripciones de tipos de piel
+    const tipoPielDescriptions = {
+        pielSeca: 'La piel seca se caracteriza por sentirse áspera y tirante. Puede requerir hidratación frecuente.',
+        pielGrasa: 'La piel grasa produce más aceite de lo normal y puede tener poros dilatados y tendencia a imperfecciones.',
+        pielMixta: 'La piel mixta es una combinación de piel seca y grasa, con áreas secas y áreas más oleosas.'
+    };
+
     // Descripciones de problemas dermatológicos
     const problemDescriptions = {
         acne: 'El acné es una afección cutánea común que causa la formación de granos y espinillas en la piel.',
@@ -41,21 +49,19 @@ document.addEventListener('DOMContentLoaded', function () {
         verrugas: 'Las verrugas son crecimientos cutáneos causados por el virus del papiloma humano (VPH). Pueden aparecer en cualquier parte del cuerpo.'
     };
 
-    // Descripciones de tipos de piel
-    const tipoPielDescriptions = {
-        pielSeca: 'La piel seca es propensa a la sequedad y descamación debido a la falta de humedad natural.',
-        pielGrasa: 'La piel grasa produce un exceso de aceite, lo que puede llevar a poros obstruidos y acné.',
-        pielMixta: 'La piel mixta es una combinación de piel seca y grasa, con áreas secas y áreas más grasas en la cara.'
-    };
-
-    // Mostrar la descripción del tipo de piel seleccionado al pasar el mouse sobre la opción
+    // Mostrar la descripción de los tipos de piel seleccionados al pasar el mouse sobre la opción
     const tipoPielSelect = document.getElementById('tipoPiel');
     tipoPielSelect.addEventListener('change', () => {
-        const selectedOption = tipoPielSelect.selectedOptions[0];
+        const selectedOption = tipoPielSelect.options[tipoPielSelect.selectedIndex];
         const tipoPielKey = selectedOption.value;
         const tipoPielDescription = tipoPielDescriptions[tipoPielKey];
-        
-        helpPopupTipoPiel.innerHTML = tipoPielDescription || 'Haga clic en el icono de ayuda (?) para obtener más información sobre el tipo de piel seleccionado.';
+        const helpPopupTipoPiel = document.getElementById('helpPopupTipoPiel');
+
+        if (tipoPielDescription) {
+            helpPopupTipoPiel.innerHTML = tipoPielDescription;
+        } else {
+            helpPopupTipoPiel.innerHTML = 'Haga clic en el icono de ayuda (?) para obtener más información sobre el tipo de piel seleccionado.';
+        }
     });
 
     // Mostrar la descripción de los problemas dermatológicos seleccionados al pasar el mouse sobre la opción
@@ -72,6 +78,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
+        const helpPopupProblemasDermatologicos = document.getElementById('helpPopupProblemasDermatologicos');
         helpPopupProblemasDermatologicos.innerHTML = helpText || 'Haga clic en el icono de ayuda (?) para obtener más información sobre los problemas seleccionados.';
+    });
+
+    // Mostrar u ocultar el cuadro de dedicatoria e imagen al marcar o desmarcar "Es para Regalo"
+    const esParaRegaloCheckbox = document.getElementById('esParaRegalo');
+    const dedicatoriaContainer = document.querySelector('.dedicatoria-container');
+
+    esParaRegaloCheckbox.addEventListener('change', () => {
+        if (esParaRegaloCheckbox.checked) {
+            dedicatoriaContainer.style.display = 'block';
+        } else {
+            dedicatoriaContainer.style.display = 'none';
+        }
     });
 });
