@@ -60,12 +60,12 @@ body {
 
 .agregar-carrito {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 1px;
     margin-top: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -78,15 +78,15 @@ body {
 /* Estilos para el carrito de compras flotante */
 .carrito-flotante {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
     background-color: #fff;
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    width: 100%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    max-width: 100px;
+    width: 90%;
 }
 
 .carrito-item {
