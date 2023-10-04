@@ -14,6 +14,11 @@
 .icon-container {
     display: inline-block;
     margin-left: 10px;
+    justify-content: center;
+}
+
+.img-icono{
+    justify-content: center;
 }
 
 /* Estilo para la ventana emergente de ayuda */
