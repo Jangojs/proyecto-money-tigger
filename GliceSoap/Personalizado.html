@@ -27,7 +27,7 @@
       </header>
 
     <video width="100%" height="auto" autoplay muted loop>
-        <source src="/GliceSoap/video/#" type="video/mp4">
+        <source src="/GliceSoap/video/video banner acerca de.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video
     </video>
 
@@ -39,11 +39,28 @@
 
             <button onclick="redirigirFormulario()">Magia</button>
         </div>
-
+        
         <div id="moldes">
             <h2>Moldes Disponibles</h2>
-            <!-- Agrega aquí las figuritas de moldes -->
+            <div id="carouselMoldes" class="carousel">
+                <img src="/GliceSoap/img/molde1.jpg" alt="Molde 1">
+                <img src="/GliceSoap/img/molde2.jpg" alt="Molde 2">
+                <img src="/GliceSoap/img/molde3.jpg" alt="Molde 3">
+                <!-- Agrega más elementos img según sea necesario -->
+            </div>
         </div>
+        
+        <script>
+            // Script para hacer clic en el carrusel
+            document.getElementById('carouselMoldes').addEventListener('click', function (e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                    const scrollAmount = e.target.offsetWidth + 10; // Ancho de la imagen más el margen
+                    this.scrollLeft += e.target.offsetLeft - this.scrollLeft - (this.offsetWidth / 2 - e.target.offsetWidth / 2);
+                }
+            });
+        </script>
+        
     </main>
 
     <footer>

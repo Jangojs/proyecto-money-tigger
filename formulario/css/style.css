@@ -1,3 +1,33 @@
+body {
+    animation: changeimage 30s infinite alternate;
+}
+
+@keyframes changeimage {
+    0% {
+        background-image: url(/GliceSoap/img/10.jpg);
+    }
+    14.28% {
+        background-image: url(/GliceSoap/img/12.jpg);
+    }
+    28.56% {
+        background-image: url(/GliceSoap/img/15.jpg);
+    }
+    42.84% {
+        background-image: url(/GliceSoap/img/16.jpg);
+    }
+    57.12% {
+        background-image: url(/GliceSoap/img/17.jpg);
+    }
+    71.4% {
+        background-image: url(/GliceSoap/img/18.jpg);
+    }
+    85.68% {
+        background-image: url(/GliceSoap/img/19.jpg);
+    }
+    100% {
+        background-image: url(/GliceSoap/img/10.jpg); /* Regresar al inicio para hacerlo cíclico */
+    }
+}
 
 /* Estilo para el icono de ayuda */
 .help-icon {

@@ -6,6 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras - GLICESOAP</title>
     <link rel="stylesheet" href="/GliceSoap/css/carrito.css">
+    <script src="/GliceSoap/js/carrito.js"></script>
+    <script src="/GliceSoap/js/banners.js"></script>
+    <link rel="stylesheet" href="/GliceSoap/css/productos.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener los datos del formulario almacenados en localStorage
+            const datosFormulario = JSON.parse(localStorage.getItem('datosFormulario'));
+        
+            if (datosFormulario) {
+                const productosContainer = document.getElementById('Productos-container');
+        
+                // Obtener los productos almacenados en localStorage
+                const productos = JSON.parse(localStorage.getItem('productos')) || [];
+        
+                // Mostrar los productos en carrito.html
+                productos.forEach(producto => {
+                    const productoElement = document.createElement('div');
+                    productoElement.innerHTML = `
+                        <img src="${producto.imagen}" alt="Producto">
+                        <p>${producto.descripcion}</p>
+                        <p>Precio: $${producto.precio}</p>
+                        <p>Dedicatoria: ${producto.dedicatoria || 'N/A'}</p>
+                        <p>Imagen de regalo: ${producto.imagenRegalo || 'N/A'}</p>
+                        <button onclick="quitarDelCarrito('${producto.descripcion}')">Quitar del carrito</button>
+                    `;
+                    productosContainer.appendChild(productoElement);
+                });
+        
+                // Agregar botón para redirigir al proceso de pago
+                const pagoButton = document.createElement('a');
+                pagoButton.href = 'pago.html';
+                pagoButton.innerText = 'Ir al pago';
+                pagoButton.className = 'btn btn-primary';
+                productosContainer.appendChild(pagoButton);
+        
+                // Mostrar el botón de quitar si hay productos en el carrito
+                if (productos.length > 0) {
+                    const quitarButton = document.createElement('button');
+                    quitarButton.innerText = 'Vaciar carrito';
+                    quitarButton.onclick = function () {
+                        // Limpiar productos en localStorage
+                        localStorage.removeItem('productos');
+                        // Recargar la página para reflejar los cambios
+                        location.reload();
+                    };
+                    productosContainer.appendChild(quitarButton);
+                } else {
+                    // Si no hay productos, ocultar el botón de ir al pago
+                    pagoButton.style.display = 'none';
+                }
+            }
+        });
+        
+        function quitarDelCarrito(descripcion) {
+            // Obtener productos almacenados en localStorage
+            let productos = JSON.parse(localStorage.getItem('productos')) || [];
+        
+            // Filtrar el producto que coincide con la descripción
+            productos = productos.filter(producto => producto.descripcion !== descripcion);
+        
+            // Actualizar productos en localStorage
+            localStorage.setItem('productos', JSON.stringify(productos));
+        
+            // Recargar la página para reflejar los cambios
+            location.reload();
+        }
+        </script>        
 </head>
 <body>
     <header style="background-color: #ebebeb; padding: 20px;">
@@ -25,18 +92,32 @@
         </div>
       </header>
 
-    <h1>Carrito de Compras</h1>
-    
-    <!-- Contenido del carrito -->
+      <section class="banners-container">
+        <div class="banners">
+            <div class="banner">
+                <img src="/GliceSoap/img/11.jpg" alt="Banner 1">
+            </div>
+            <div class="banner">
+                <img src="/GliceSoap/img/5.jpg" alt="Banner 2">
+            </div>
+            <div class="banner">
+                <img src="/GliceSoap/img/14.jpg" alt="Banner 3">
+            </div>
+        </div>
+        <button class="prev" onclick="cambiarBanner(-1)">❮</button>
+        <button class="next" onclick="cambiarBanner(1)">❯</button>
+    </section>
+
+    <div id="Productos-container"></div>
 
     <footer style="background-color: #ebebeb; padding: 40px;">
         <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;">
   
             <div class="redes-sociales" style="flex: 1;">
                 <h2 style="color: #555;">Síguenos en Redes Sociales</h2>
-                <a href="#" style="text-decoration: none; color: #555;">Facebook</a>
-                <a href="#" style="text-decoration: none; color: #555;">Instagram</a>
-                <a href="#" style="text-decoration: none; color: #555;">Twitter</a>
+                <a href="https://qr.link/CHiOFk" style="text-decoration: none; color: #555;">Facebook</a>
+                <a href="https://qr.link/CHiOFk" style="text-decoration: none; color: #555;">Instagram</a>
+                <a href="https://qr.link/CHiOFk" style="text-decoration: none; color: #555;">Twitter</a>
             </div>
   
             <div class="boletin" style="flex: 1;">

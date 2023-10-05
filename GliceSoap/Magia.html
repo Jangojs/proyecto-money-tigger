@@ -6,38 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GLICESOAP</title>
     <link rel="stylesheet" href="/formulario/css/style.css">
+    <script src="/GliceSoap/js/carrito.js"></script>
     <!-- Agrega este script en el encabezado de tu Magia.html -->
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const formulario = document.getElementById('soapForm');
-
-        formulario.addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            // Obtener los datos del formulario
-            const datosFormulario = {
-                nombre: document.getElementById('nombre').value,
-                email: document.getElementById('email').value,
-                fragancia: document.getElementById('Fragancia').value,
-                color: document.getElementById('opciones').value,
-                tamaño: document.getElementById('tamaño').value,
-                tipoPiel: document.getElementById('tipoPiel').value,
-                problemasDermatologicos: document.getElementById('problemasDermatologicos').value,
-                alergias: document.getElementById('alergias').value,
-                shippingAddress: document.getElementById('shippingAddress').value,
-                esParaRegalo: document.getElementById('esParaRegalo').checked,
-                dedicatoria: document.getElementById('dedicatoria').value,
-                imagenRegalo: document.getElementById('imagenRegalo').value,
-            };
-
-            // Almacenar los datos en localStorage
-            localStorage.setItem('datosFormulario', JSON.stringify(datosFormulario));
-
-            // Redirigir a Carrito.html
-            window.location.href = '/GliceSoap/carrito.html';
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const formulario = document.getElementById('soapForm');
+    
+            formulario.addEventListener('submit', function (event) {
+                event.preventDefault();
+    
+                // Obtener los datos del formulario
+                const datosFormulario = {
+                    nombre: document.getElementById('nombre').value,
+                    email: document.getElementById('email').value,
+                    fragancia: document.getElementById('Fragancia').value,
+                    color: document.getElementById('opciones').value,
+                    tamaño: document.getElementById('tamaño').value,
+                    tipoPiel: document.getElementById('tipoPiel').value,
+                    problemasDermatologicos: document.getElementById('problemasDermatologicos').value,
+                    alergias: document.getElementById('alergias').value,
+                    shippingAddress: document.getElementById('shippingAddress').value,
+                    esParaRegalo: document.getElementById('esParaRegalo').checked,
+                    dedicatoria: document.getElementById('dedicatoria').value,
+                    imagenRegalo: document.getElementById('imagenRegalo').value,
+                };
+    
+                // Almacenar los datos en localStorage
+                localStorage.setItem('datosFormulario', JSON.stringify(datosFormulario));
+    
+                // Obtener los productos seleccionados del formulario
+                const productosSeleccionados = obtenerProductosSeleccionados();
+    
+                // Obtener o inicializar el array de productos en localStorage
+                const productosEnCarrito = JSON.parse(localStorage.getItem('productos')) || [];
+    
+                // Agregar los productos seleccionados al array
+                productosEnCarrito.push(...productosSeleccionados);
+    
+                // Guardar el array actualizado en localStorage
+                localStorage.setItem('productos', JSON.stringify(productosEnCarrito));
+    
+                // Redirigir a Carrito.html
+                window.location.href = '/GliceSoap/carrito.html';
+            });
+    
+            // Función para obtener los productos seleccionados del formulario
+            function obtenerProductosSeleccionados() {
+                // Implementa lógica para obtener los productos seleccionados del formulario
+                // Asegúrate de que esta lógica sea correcta y que estés obteniendo los datos esperados.
+    
+                // Ejemplo: supongamos que tienes un campo de checkbox con la clase 'producto-checkbox'
+                const checkboxes = document.querySelectorAll('.producto-checkbox');
+                const productosSeleccionados = [];
+    
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        // Agregar el producto al array de productos seleccionados
+                        const producto = {
+                            descripcion: checkbox.dataset.descripcion, // Ajusta según tus datos
+                            // Agrega otros datos necesarios
+                        };
+                        productosSeleccionados.push(producto);
+                    }
+                });
+    
+                return productosSeleccionados;
+            }
         });
-    });
-</script>
+    </script>    
 </head>
 <body>
     <center><img src="/formulario/img/icon1.png"></center>
@@ -49,26 +85,49 @@
         <label for="email">Correo electrónico:</label>
         <input type="email" id="email" name="email" required><br><br>
 
-        <label for="fragrance">Fragancia:</label><br><br>
-        <select name="Fragancia" id="Fragancia">
-            <option value=""></option>
-            <option value="Lavanda">Lavanda</option>
-            <option value="Coco">Coco</option>
-            <option value="Manzanilla">Manzanilla</option>
-            <option value="Citricos">Citricos</option>
-            <option value="frutos rojos">Frutos rojos</option>
-        </select><br><br>
-
         <label for="color">Color:</label><br><br>
         <select name="opciones" id="opciones">
             <option value=""></option>
-            <option value="Celeste">Celeste</option>
-            <option value="blanco">blanco</option>
-            <option value="verde">verde</option>
-            <option value="Amarillo">Amarillo</option>
-            <option value="naranja">naranja</option>
+            <option value="rojo">Rojo</option>
+            <option value="verde">Verde</option>
+            <option value="azul">Azul</option>
+            <option value="amarillo">Amarillo</option>
+            <option value="naranja">Naranja</option>
+            <option value="turquesa">Turquesa</option>
+            <option value="verde-limon">Verde Limón</option>
+            <option value="violeta">Violeta</option>
+            <option value="negro">Negro</option>
+            <option value="cafe">Café</option>
+            <option value="rosado">Rosado</option>
         </select><br><br>
-
+    
+        <label for="fragrancia">Fragancia:</label><br><br>
+        <select name="Fragancia" id="Fragancia">
+            <option value=""></option>
+            <option value="chocolate">Chocolate</option>
+            <option value="almendras">Almendras</option>
+            <option value="canela">Canela</option>
+            <option value="manzana">Manzana</option>
+            <option value="sabila">Sábila</option>
+            <option value="te-verde">Té Verde</option>
+            <option value="menta">Menta</option>
+            <option value="miel">Miel</option>
+            <option value="cafe-eucalipto">Café Eucalipto</option>
+            <option value="pino">Pino</option>
+            <option value="cereza">Cereza</option>
+            <option value="uva">Uva</option>
+            <option value="frutos-rojos">Frutos Rojos</option>
+            <option value="avena">Avena</option>
+            <option value="brisa-de-mar">Brisa de Mar</option>
+            <option value="rosas">Rosas</option>
+            <option value="limon">Limón</option>
+            <option value="naranja">Naranja</option>
+            <option value="kiwi">Kiwi</option>
+            <option value="sandia">Sandía</option>
+            <option value="vainilla">Vainilla</option>
+            <option value="manzanilla">Manzanilla</option>
+            <option value="romero">Romero</option>
+        </select><br><br>
         <label for="size">Tamaño (en gramos):</label><br><br>
         <select name="tamaño" id="tamaño">
             <option value=""></option>
@@ -146,8 +205,8 @@
 
     <div class="btn-primary">
         <a href="/GliceSoap/GliceSoap.html">Volver a la tienda</a>
-    </div>
-
+    </div> 
     <script src="/formulario/js/script.js"></script>
+    
 </body>
 </html>
