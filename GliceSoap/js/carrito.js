@@ -1,45 +1,14 @@
-// Variables para mantener el estado del carrito
-let carrito = [];
-
-// Función para agregar un producto al carrito
-function agregarAlCarrito(id, nombre, precio) {
-    const producto = { id, nombre, precio };
-    carrito.push(producto);
-    actualizarResumenCarrito();
-}
-
-// Función para actualizar el resumen del carrito en la página
-function actualizarResumenCarrito() {
-    const carritoResumen = document.getElementById('carrito-resumen');
-    carritoResumen.innerHTML = '';
-
-    if (carrito.length === 0) {
-        carritoResumen.innerHTML = '<p>El carrito está vacío.</p>';
+// Código JavaScript para la página del carrito
+document.addEventListener('DOMContentLoaded', function () {
+    // Recuperar datos del formulario almacenados en localStorage
+    const datosFormularioString = localStorage.getItem('datosFormulario');
+    
+    if (datosFormularioString) {
+        const datosFormulario = JSON.parse(datosFormularioString);
+        // Aquí puedes utilizar los datosFormulario para mostrar la información en el carrito
+        console.log(datosFormulario);
     } else {
-        let total = 0;
-        carrito.forEach((producto) => {
-            total += producto.precio;
-            carritoResumen.innerHTML += `<p>${producto.nombre} - $${producto.precio}</p>`;
-        });
-
-        carritoResumen.innerHTML += `<p>Total: $${total}</p>`;
+        // Si no hay datos en el localStorage, puedes redirigir a la página principal o hacer algo más
+        console.log('No hay datos en el carrito');
     }
-}
-
-// Evento para escuchar la adición de productos desde la sección de productos
-document.addEventListener('DOMContentLoaded', () => {
-    const botonAgregar = document.querySelectorAll('.agregar-al-carrito');
-
-    botonAgregar.forEach((boton) => {
-        boton.addEventListener('click', (event) => {
-            const producto = event.currentTarget;
-            const id = producto.dataset.id;
-            const nombre = producto.dataset.nombre;
-            const precio = parseFloat(producto.dataset.precio);
-
-            agregarAlCarrito(id, nombre, precio);
-        });
-    });
-
-    actualizarResumenCarrito();
 });

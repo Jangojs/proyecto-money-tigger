@@ -1,3 +1,4 @@
+
 /* Estilo para el icono de ayuda */
 .help-icon {
     display: inline-block;
@@ -15,10 +16,7 @@
     display: inline-block;
     margin-left: 10px;
     justify-content: center;
-}
-
-.img-icono{
-    justify-content: center;
+    align-items: center;
 }
 
 /* Estilo para la ventana emergente de ayuda */
@@ -46,6 +44,30 @@ form {
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
+    animation: changeColor 12s infinite alternate;
+}
+@keyframes changeColor {
+    0% {
+        background-color: chocolate;
+    }
+    16.66% {
+        background-color: chartreuse;
+    }
+    33.33% {
+        background-color: firebrick;
+    }
+    50% {
+        background-color: coral;
+    }
+    66.66% {
+        background-color: dodgerblue;
+    }
+    83.33% {
+        background-color: gold;
+    }
+    100% {
+        background-color: mediumorchid;
+    }
 }
 
 label {

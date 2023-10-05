@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" class="icon" href="/formulario/img/icon1.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLICESOAP</title>
+    <link rel="stylesheet" href="/formulario/css/style.css">
+    <!-- Agrega este script en el encabezado de tu Magia.html -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const formulario = document.getElementById('soapForm');
+
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Obtener los datos del formulario
+            const datosFormulario = {
+                nombre: document.getElementById('nombre').value,
+                email: document.getElementById('email').value,
+                fragancia: document.getElementById('Fragancia').value,
+                color: document.getElementById('opciones').value,
+                tamaño: document.getElementById('tamaño').value,
+                tipoPiel: document.getElementById('tipoPiel').value,
+                problemasDermatologicos: document.getElementById('problemasDermatologicos').value,
+                alergias: document.getElementById('alergias').value,
+                shippingAddress: document.getElementById('shippingAddress').value,
+                esParaRegalo: document.getElementById('esParaRegalo').checked,
+                dedicatoria: document.getElementById('dedicatoria').value,
+                imagenRegalo: document.getElementById('imagenRegalo').value,
+            };
+
+            // Almacenar los datos en localStorage
+            localStorage.setItem('datosFormulario', JSON.stringify(datosFormulario));
+
+            // Redirigir a Carrito.html
+            window.location.href = '/GliceSoap/carrito.html';
+        });
+    });
+</script>
+</head>
+<body>
+    <center><img src="/formulario/img/icon1.png"></center>
+    <h1>Personaliza tu jabón de Glicerina</h1>
+    <form id="soapForm" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label><br><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="fragrance">Fragancia:</label><br><br>
+        <select name="Fragancia" id="Fragancia">
+            <option value=""></option>
+            <option value="Lavanda">Lavanda</option>
+            <option value="Coco">Coco</option>
+            <option value="Manzanilla">Manzanilla</option>
+            <option value="Citricos">Citricos</option>
+            <option value="frutos rojos">Frutos rojos</option>
+        </select><br><br>
+
+        <label for="color">Color:</label><br><br>
+        <select name="opciones" id="opciones">
+            <option value=""></option>
+            <option value="Celeste">Celeste</option>
+            <option value="blanco">blanco</option>
+            <option value="verde">verde</option>
+            <option value="Amarillo">Amarillo</option>
+            <option value="naranja">naranja</option>
+        </select><br><br>
+
+        <label for="size">Tamaño (en gramos):</label><br><br>
+        <select name="tamaño" id="tamaño">
+            <option value=""></option>
+            <option value="pequeño">Pequeño</option>
+            <option value="mediano">Mediano</option>
+            <option value="grande">Grande</option>
+        </select>
+
+        <h2>Tipo de Piel</h2>
+        <label for="tipoPiel">Tipo de piel:</label>
+        <select id="tipoPiel" name="tipoPiel">
+            <option value=""></option>
+            <option value="pielSeca">Piel seca</option>
+            <option value="pielGrasa">Piel grasa</option>
+            <option value="pielMixta">Piel mixta</option>
+            <!-- Agrega más opciones según sea necesario -->
+        </select>
+        <div class="icon-container">
+            <span class="help-icon" id="helpTipoPiel">?</span>
+        </div>
+        <div id="helpPopupTipoPiel" class="help-popup">
+            <p>Seleccione el tipo de piel que tiene</p>
+        </div>
+        <br><br>
+        
+        <h2>Problemas Dermatológicos</h2>
+        <label for="problemasDermatologicos">Problemas dermatológicos:</label>
+        <select id="problemasDermatologicos" name="problemasDermatologicos">
+            <option value=""></option>
+            <option value="acne">Acné</option>
+            <option value="quemaduras">Quemaduras</option>
+            <option value="eccema">Eccema</option>
+            <option value="psoriasis">Psoriasis</option>
+            <option value="urticaria">Urticaria</option>
+            <option value="dermatitisAtopica">Dermatitis atópica</option>
+            <option value="vitiligo">Vitiligo</option>
+            <option value="cancerPiel">Cáncer de piel</option>
+            <option value="verrugas">Verrugas</option>
+            <!-- Agrega más opciones según sea necesario -->
+        </select>
+        <div class="icon-container">
+            <span class="help-icon" id="helpProblemasDermatologicos">?</span>
+        </div>
+        <div id="helpPopupProblemasDermatologicos" class="help-popup">
+            <p>Seleccione los problemas dermatológicos que tiene.</p>
+        </div>
+        <br><br>
+
+        <h2>Alergias</h2>
+        <label for="alergias">Alergias:</label>
+        <textarea id="alergias" name="alergias" rows="4"></textarea><br><br>
+
+        <label for="size"></label>
+        <label for="shippingAddress">Dirección de envío:</label>
+        <textarea id="shippingAddress" name="shippingAddress" rows="4" required></textarea><br><br>
+
+        <h2>¿Es para Regalo?</h2>
+        <label for="esParaRegalo">¿El jabón es para regalo?</label>
+        <input type="checkbox" id="esParaRegalo" name="esParaRegalo">
+        <br><br>
+
+        <!-- Cuadro de dedicatoria e imagen (inicialmente oculto) -->
+        <div class="dedicatoria-container">
+            <h2>Dedicatoria</h2>
+            <label for="dedicatoria">Escriba su dedicatoria:</label>
+            <textarea id="dedicatoria" name="dedicatoria" rows="4"></textarea>
+            <br><br>
+
+            <h2>Imagen para el Regalo</h2>
+            <input type="file" id="imagenRegalo" name="imagenRegalo">
+        </div><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div class="btn-primary">
+        <a href="/GliceSoap/GliceSoap.html">Volver a la tienda</a>
+    </div>
+
+    <script src="/formulario/js/script.js"></script>
+</body>
+</html>

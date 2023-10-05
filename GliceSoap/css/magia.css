@@ -1,0 +1,40 @@
+body {
+    background-color: #ffcc00; /* Puedes cambiar el color según el producto */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Agregar movimiento al body con colores */
+@keyframes colorChange {
+    0% {
+        background-color: #ffcc00;
+    }
+    25% {
+        background-color: #ff6666;
+    }
+    50% {
+        background-color: #66ff66;
+    }
+    75% {
+        background-color: #6666ff;
+    }
+    100% {
+        background-color: #ffcc00;
+    }
+}
+
+body {
+    animation: colorChange 10s infinite; /* Puedes ajustar la velocidad y duración del cambio de colores */
+}
+

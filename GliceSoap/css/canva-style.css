@@ -1,0 +1,84 @@
+/* Estilos para el body y las secciones según el prototipo de Canva */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.cream-and-beige-header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.banner {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #fff;
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.banner h1 {
+    font-size: 36px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.destacados {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+footer {
+    background-color: #ebebeb;
+    padding: 40px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #555;
+}
+
+footer input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+footer button {
+    background-color: #555;
+}

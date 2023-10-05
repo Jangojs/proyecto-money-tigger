@@ -1,129 +1,54 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <link rel="icon" class="icon" href="/GliceSoap/img/jabon.jpg">
+    <link rel="icon" href="/formulario/img/icon1.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/carrito.css">
-    <title>Carrito de Compras - GliceSoap</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Carrito de Compras - GLICESOAP</title>
+    <link rel="stylesheet" href="/GliceSoap/css/carrito.css">
 </head>
 <body>
-    <header>
-        <div class="px-3 py-2 text-bg-dark border-bottom">
-          <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <a href="/GliceSoap/img/jabon.jpg" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-              </a>
-    
-              <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                <li>
-                  <a href="/GliceSoap/GliceSoap.html" class="nav-link text-secondary">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="/GliceSoap/productos.html" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                    Products
-                  </a>
-                </li>
-                <li>
-                  <a href="/GliceSoap/contacto.html" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                    Contacto
-                  </a>
-                </li>
-                <li>
-                  <a href="/GliceSoap/acerca.html" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#info"/></svg>
-                    Acerca de
-                  </a>
-                </li>
-                <li>
-                  <a href="/GliceSoap/carrito.html" class="nav-link text-white">
-                    <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#cart"/></svg>
-                    Carrito
-                  </a>
-                </li>
-              </ul>
+    <header style="background-color: #ebebeb; padding: 20px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center;" >
+                <a href="/GliceSoap/GliceSoap.html" style="text-decoration: none;">
+                    <img src="/formulario/img/icon1.png" alt="GliceSoap-Logo" style="width: 70px; height: auto;">
+                </a>
+                <nav style="display: flex; gap: 20px;">
+                    <a href="/GliceSoap/GliceSoap.html" style="text-decoration: none; color: #555;">Home</a>
+                    <a href="/GliceSoap/Personalizado.html" style="text-decoration: none; color:#555;">Personalizado</a>
+                    <a href="/GliceSoap/acerca.html" style="text-decoration: none; color: #555;">Acerca de</a>
+                    <a href="/GliceSoap/carrito.html" style="text-decoration: none; color: #555;">Carrito</a>
+                    <a href="/GliceSoap/contacto.html" style="text-decoration: none; color: #555;">Contacto</a>
+                </nav>
             </div>
-          </div>
-        </div>
-        <div class="px-3 py-2 border-bottom mb-3">
-          <div class="container d-flex flex-wrap justify-content-center">
-            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-              <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-            </form>
-    
-            <div class="text-end">
-              <button type="button" class="btn btn-light text-dark me-2"><a href="login.html">Login</a></button>
-              <button type="button" class="btn btn-primary"><a href="registro.html">Sign-up</a></button>
-            </div>
-          </div>
         </div>
       </header>
 
-    <section class="carrito">
-        <div class="container">
-            <h1>Carrito de Compras</h1>
-            <div id="carrito">
-                <!-- Resumen detallado de los productos en el carrito se llenará dinámicamente con JavaScript -->
+    <h1>Carrito de Compras</h1>
+    
+    <!-- Contenido del carrito -->
+
+    <footer style="background-color: #ebebeb; padding: 40px;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;">
+  
+            <div class="redes-sociales" style="flex: 1;">
+                <h2 style="color: #555;">Síguenos en Redes Sociales</h2>
+                <a href="#" style="text-decoration: none; color: #555;">Facebook</a>
+                <a href="#" style="text-decoration: none; color: #555;">Instagram</a>
+                <a href="#" style="text-decoration: none; color: #555;">Twitter</a>
             </div>
-            <script>
-            // Función para mostrar los productos del carrito en la página
-          function mostrarProductosEnCarrito() {
-              const carrito = document.getElementById("carrito");
-              carrito.innerHTML = "";
-              
-              carritoProductos.forEach((producto, index) => {
-              const carritoItem = document.createElement("div");
-              carritoItem.classList.add("carrito-item");
-              carritoItem.innerHTML = `
-                  <p>${producto.nombre} - $${producto.precio.toFixed(2)}</p>
-                  <button class="quitar-producto" data-index="${index}">Quitar</button>
-              `;
-              carrito.appendChild(carritoItem);
-            });
-          }
-
-          // Mostrar los productos del carrito al cargar la página
-          mostrarProductosEnCarrito();
-        </script>
-
-            <div id="calculadora-envio">
-                <!-- Calculadora de costos de envío -->
-                <h2>Calculadora de Costos de Envío</h2>
-                <form id="calculadora-form">
-                    <div class="campo">
-                        <label for="codigo-postal">Código Postal:</label>
-                        <input type="text" id="codigo-postal" name="codigo-postal" required>
-                    </div>
-                    <button type="submit">Calcular Envío</button>
+  
+            <div class="boletin" style="flex: 1;">
+                <h2 style="color: #555;">Suscríbete al Boletín</h2>
+                <form id="suscripcion" action="#" method="POST" style="display: flex;">
+                    <input type="email" id="email-suscripcion" name="email-suscripcion" placeholder="Ingresa tu correo" required style="flex: 1; padding: 10px; box-sizing: border-box; border: 1px solid #ddd; border-radius: 5px;">
+                    <button type="submit" style="background-color: #555; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Suscribirse</button>
                 </form>
             </div>
-            <button id="boton-pago" class="btn btn-primary">Proceder al Pago</button>
+  
         </div>
-    </section>
-
-    <footer>
-        <div class="redes-sociales">
-            <h2>Síguenos en Redes Sociales</h2>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-        </div>
-        <div class="boletin">
-            <h2>Suscríbete al Boletín</h2>
-            <form id="suscripcion" action="#" method="POST">
-                <input type="email" id="email-suscripcion" name="email-suscripcion" placeholder="Ingresa tu correo" required>
-                <button type="submit">Suscribirse</button>
-            </form>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="js/productos.js"></script>
+      </footer>
+    <script src="/GliceSoap/js/carrito.js"></script>
 </body>
 </html>

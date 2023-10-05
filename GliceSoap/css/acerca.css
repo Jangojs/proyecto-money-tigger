@@ -6,6 +6,11 @@ body {
     padding: 0;
 }
 
+header {
+    background-color: #ebebeb;
+    padding: 20px;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -89,3 +94,13 @@ button[type="submit"]:hover {
         text-align: center;
     }
 }
+
+video {
+    
+    width: 30%; /* Ajusta el ancho según tus necesidades */
+    height:100%;
+    object-fit: cover; /* Esto asegura que el video cubra todo el contenedor manteniendo la relación de aspecto */
+    height: 600px; 
+    max-height: 1000px;
+  }
+  

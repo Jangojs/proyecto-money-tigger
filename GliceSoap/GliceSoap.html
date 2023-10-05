@@ -1,98 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="icon" class="icon" href="/GliceSoap/img/jabon.jpg">
+    <link rel="icon" class="icon" href="/formulario/img/icon1.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/GliceSoap/css/style.css">
-    <title>Tienda de Jabones Artesanales</title>
+    <link rel="stylesheet" href="/GliceSoap/css/2.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/GliceSoap/css/canva-style.css"> <!-- Nuevo archivo para los estilos específicos de Canva -->
+    <title>GLICESOAP</title>
 </head>
 <body>
-  <header>
-    <div class="px-3 py-2 text-bg-dark border-bottom">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="/GliceSoap/img/jabon.jpg" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-          </a>
-
-          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li>
-              <a href="/GliceSoap/GliceSoap.html" class="nav-link text-secondary">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/GliceSoap/productos.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="/GliceSoap/contacto.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                Contacto
-              </a>
-            </li>
-            <li>
-              <a href="/GliceSoap/acerca.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#info"/></svg>
-                Acerca de
-              </a>
-            </li>
-            <li>
-              <a href="/GliceSoap/carrito.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#cart"/></svg>
-                Carrito
-              </a>
-            </li>
-          </ul>
+  <header style="background-color: #ebebeb; padding: 20px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center;" >
+            <a href="/GliceSoap/GliceSoap.html" style="text-decoration: none;">
+                <img src="/formulario/img/icon1.png" alt="GliceSoap-Logo" style="width: 70px; height: auto;">
+            </a>
+            <nav style="display: flex; gap: 20px;">
+                <a href="/GliceSoap/GliceSoap.html" style="text-decoration: none; color: #555;">Home</a>
+                <a href="/GliceSoap/Personalizado.html" style="text-decoration: none; color:#555;">Personalizado</a>
+                <a href="/GliceSoap/acerca.html" style="text-decoration: none; color: #555;">Acerca de</a>
+                <a href="/GliceSoap/carrito.html" style="text-decoration: none; color: #555;">Carrito</a>
+                <a href="/GliceSoap/contacto.html" style="text-decoration: none; color: #555;">Contacto</a>
+            </nav>
         </div>
-      </div>
-    </div>
-    <div class="px-3 py-2 border-bottom mb-3">
-      <div class="container d-flex flex-wrap justify-content-center">
-        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form>
-
-        <div class="text-end">
-          <button type="button" class="btn btn-light text-dark me-2"><a href="login.html">Login</a></button>
-          <button type="button" class="btn btn-primary"><a href="registro.html">Sign-up</a></button>
-        </div>
-      </div>
     </div>
   </header>
 
     <section class="banner">
-        <img src="/GliceSoap/img/jabon.jpg" alt="Imagen de jabones artesanales">
-        <h1>¡Descubre nuestros jabones artesanales!</h1>
-        <a href="productos.html" class="cta-button">Ver Productos</a>
-    </section>
-
-    <section class="destacados">
-        <!-- Aquí se mostrarán los productos destacados o novedades dinámicamente con JavaScript -->
-    </section>
-
-    <section class="testimonios">
-        <!-- Aquí se mostrarán los testimonios de clientes satisfechos dinámicamente con JavaScript -->
-    </section>
-
-    <footer>
-        <div class="contacto">
-            <h2>Contacto</h2>
-            <p>Dirección: Calle de la Tienda, Ciudad</p>
-            <p>Email: contacto@jabonesartesanales.com</p>
-            <p>Teléfono: +123 456 789</p>
+        <div class="cream-and-beige-banner">
+            <img src="/GliceSoap/img/jabon.jpg" alt="Imagen de jabones artesanales">
+            <div class="banner-text">
+                <p>Artesanales | Naturales | Personalizados</p>
+            </div>
         </div>
-        <div class="redes-sociales">
-            <h2>Síguenos en Redes Sociales</h2>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+    </section>
+
+    <section class="productos">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 20px; text-align: center;">
+            <h2>Nuestros Productos</h2>
+            
+            <div class="imagenes-productos" style="display: flex; justify-content: space-around; margin-top: 20px;">
+                <img src="/GliceSoap/img/producto1.jpg" alt="Producto 1" style="width: 250px; height: auto;">
+                <img src="/GliceSoap/img/producto2.jpg" alt="Producto 2" style="width: 250px; height: auto;">
+                <img src="/GliceSoap/img/producto3.jpg" alt="Producto 3" style="width: 250px; height: auto;">
+            </div>
+            
+            <div class="lorem-ipsum" style="margin-top: 40px; text-align: left;">
+                <p>
+                    GliceSoap es una empresa emergente que se dedica a la producción <br>
+                    y venta de jabones artesanales de alta calidad hechos con glicerina. <br>
+                    Nuestra plataforma de venta en línea ofrece a los consumidores <br>
+                    la oportunidad de diseñar su propio jabón, <br>
+                    convirtiendo la rutina de limpieza en un ritual personalizado y placentero. <br> </p>
+                    <a href="Personalizado.html" class="cta-button">Personaliza</a>
+            </div>
         </div>
+    </section>
+
+    <footer style="background-color: #ebebeb; padding: 40px;">
+      <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;">
+
+          <div class="redes-sociales" style="flex: 1;">
+              <h2 style="color: #555;">Síguenos en Redes Sociales</h2>
+              <a href="#" style="text-decoration: none; color: #555;">Facebook</a>
+              <a href="#" style="text-decoration: none; color: #555;">Instagram</a>
+              <a href="#" style="text-decoration: none; color: #555;">Twitter</a>
+          </div>
+
+          <div class="boletin" style="flex: 1;">
+              <h2 style="color: #555;">Suscríbete al Boletín</h2>
+              <form id="suscripcion" action="#" method="POST" style="display: flex;">
+                  <input type="email" id="email-suscripcion" name="email-suscripcion" placeholder="Ingresa tu correo" required style="flex: 1; padding: 10px; box-sizing: border-box; border: 1px solid #ddd; border-radius: 5px;">
+                  <button type="submit" style="background-color: #555; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Suscribirse</button>
+              </form>
+          </div>
+
+      </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="/GliceSoap/js/script.js"></script>
